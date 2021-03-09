@@ -1,0 +1,16 @@
+.home {
+  margin-top: $mobileHeader;
+  @include breakpoint(md) {
+    margin-top: $desktopHeader;
+  }
+}
+.center-underline {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  display: block;
+  background-color: $medOrange;
+  height: 6px;
+  width: 14rem;
+  margin: 3rem 0;
+}

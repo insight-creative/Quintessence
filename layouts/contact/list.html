@@ -1,0 +1,66 @@
+{{ define "main" }}
+<div class="fade-wrapper" data-scroll-section>
+    <div class="bg-gray">
+        <div class="container text-center padding-top-4 padding-bottom-4">
+            <h1>Contact Us</h1>
+            <div class="contact-info">
+              <ul class="contact-info__contact-list flex flex-column flex-row-m">
+                <a href="tel:{{.Site.Params.phone}}" class="contact-info__contact-link flex flex-center">
+                  <li class="contact-info__contact-list-item">
+                    <h2 class="g3">Phone</h2>
+                    {{ .Site.Params.phone }}
+                  </li>
+                </a>
+                <a href="{{ site.Params.googleMapLocation }}" target="_blank" rel="noopener" class="contact-info__contact-link flex flex-center">
+                  <li class="contact-info__contact-list-item">
+                    <h2 class="g3">Address</h2>
+                    {{ .Site.Params.address }}
+                  </li>
+                </a>
+                <a href="mailto:{{ .Site.Params.email }}" class="contact-info__contact-link flex flex-center">
+                  <li class="contact-info__contact-list-item">
+                    <h2 class="g3">Email</h2>
+                    {{ .Site.Params.email }}
+                  </li>
+                </a>
+              </ul>
+            </div>
+        </div>
+    </div>
+    <div class="lane-narrow fade-up padding-top-4 padding-bottom-4">
+        <div class="contact-form">
+            <h4 class="no-margin">Send a Message</h4>
+            <div class="underline"></div>
+            <div class="contact-form__wrapper">
+                <form name="contact" netlify netlify-honeypot="bot-field" action="/thank-you">
+                    <div hidden>
+                        <label>
+                          Don’t fill this out if you're human: 
+                          <input name="bot-field" />
+                        </label>
+                    </div>
+                    <div class="contact-form__form-group">
+                        <label for="name">Name*</label>
+                        <input name="name" type="name" class="contact-form__form-control" required>
+                    </div>
+                    <div class="contact-form__form-group">
+                        <label for="email">Email*</label>
+                        <input name="_replyto" type="email" class="contact-form__form-control" required>
+                    </div>
+                    <div class="contact-form__form-group">
+                        <label for="email">Phone*</label>
+                        <input name="phone" type="phone" class="contact-form__form-control" required>
+                    </div>
+                    <div class="contact-form__form-group">
+                        <label for="message">Message*</label>
+                        <textarea name="message" class="contact-form__form-control" rows="4" required></textarea>
+                    </div>
+                    <div style="margin-bottom: 1em;" netlify-recaptcha></div>
+                    <button target="_blank" type="submit" class="contact-form__btn btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{ end }}
