@@ -1,0 +1,8 @@
+// Adds consitent space and padding for each full panel section
+.block {
+  padding: $ic-600 0;
+
+  @include breakpoint(md) {
+    padding: $ic-700 0;
+  }
+}

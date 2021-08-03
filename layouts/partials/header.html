@@ -1,8 +1,8 @@
 {{ "<!-- Header -->" | safeHTML }}
 <a class="screen-reader-skip-to-content" href="#main-content" tabindex="0">Skip to main content</a>
 <a class="screen-reader-skip-to-content" href="#footer" tabindex="0">Skip to footer content</a>
-<header class="site-header" data-scroll-sticky data-scroll-target="header">
-  <nav class="nav primary-nav">
+<header class="site-header" role="banner">
+  <div class="nav primary-nav wrapper-wide">
     <div class="logo-wrapper">
       <a class="brand-logo" href="{{ site.BaseURL }}">
         {{ if site.Params.logo }}
@@ -12,20 +12,22 @@
         {{ end }}
       </a>
     </div>
+    <nav role="navigation" aria-label="primary navigation">
+      {{ with .Site.Menus.main }}
+      <ul class="nav-list" role="list">
+          {{ range . }}
+          <li class="nav-list__item">
+            <a class="nav-list__link" href="{{ .URL }}" aria-label="{{ .Name }}"
+              title="{{ .Name }}">{{ .Name }}</a>
+          </li>
+          {{ end }}
+        </ul>
+      {{ end }}
+    </nav>
     <button class="hamburger hamburger--slider" type="button" aria-label="open mobile menu" aria-expanded="false">
       <span class="hamburger-box">
         <span class="hamburger-inner"></span>
       </span>
     </button>
-    {{ with .Site.Menus.main }}
-      <ul class="nav-list">
-          {{ range . }}
-          <li class="nav-list-item">
-            <a class="nav-item" class="nav-item" href="{{ .URL }}" aria-label="{{ .Name }}"
-              title="{{ .Name }}">{{ .Name }}</a>
-          </li>
-          {{ end }}
-        </ul>
-    {{ end }}
-  </nav>
+  </div>
 </header>

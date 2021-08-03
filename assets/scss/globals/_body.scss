@@ -1,27 +1,44 @@
 * {
   box-sizing: border-box;
+  max-width: $measure;
 }
+
+html,
+body,
+div,
+header,
+nav,
+main,
+footer {
+  max-width: none;
+}
+
 body {
-  background-color: $white;
-  font-family: $primaryFont;
-  overflow-x: hidden;
+  font-family: $primary-font;
+  color: $black;
 }
-.site-main {
-  opacity: 1;
+
+:focus {
+  outline: 2px dashed get-color("primary");
+  outline-offset: 0.25rem;
 }
-ul {
-  margin: 0;
+
+main:focus {
+  outline: none;
 }
+
 // Style highlight to match our themes colors
 ::-moz-selection {
-  background: rgba(197, 103, 39, 0.8);
+  background: rgba($primary-color, 0.8);
   color: $white;
 }
+
 ::selection {
-  background: rgba(197, 103, 39, 0.8);
+  background: rgba($primary-color, 0.8);
   color: $white;
 }
+
 ::-ms-selection {
-  background: rgba(197, 103, 39, 0.8);
+  background: rgba($primary-color, 0.8);
   color: $white;
 }

@@ -1,5 +1,5 @@
-<div class="container blog-container" data-scroll-section>
-    <h3>Read some of our recent posts to learn more about CorHome.</h3>
+<div class="wrapper-wide blog-container">
+    <h3>Read some of our recent posts to learn more about {{ .Site.Author }}.</h3>
       {{ $pages := .Site.RegularPages }}
       {{ $blog := where $pages "Type" "blog" }}
       {{- range first 3 $blog -}}

@@ -1,176 +1,185 @@
-/*--------------------------------------------------------------
-7.0 Typography
---------------------------------------------------------------*/
-html {
-  font-size: 100%;
-  font-size: 10px;
+/* poppins-regular - latin */
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""),
+    url("../fonts/poppins-v15-latin-regular.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../fonts/poppins-v15-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  font-display: swap;
 }
+/* poppins-500 - latin */
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  src: local(""), url("../fonts/poppins-v15-latin-500.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../fonts/poppins-v15-latin-500.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  font-display: swap;
+}
+/* poppins-600 - latin */
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  src: local(""), url("../fonts/poppins-v15-latin-600.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../fonts/poppins-v15-latin-600.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  font-display: swap;
+}
+/* poppins-700 - latin */
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  src: local(""), url("../fonts/poppins-v15-latin-700.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../fonts/poppins-v15-latin-700.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  font-display: swap;
+}
+/* poppins-900 - latin */
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 900;
+  src: local(""), url("../fonts/poppins-v15-latin-900.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../fonts/poppins-v15-latin-900.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  font-display: swap;
+}
+
 body,
 button,
 input,
 select,
 optgroup,
 textarea {
-  color: $darkBlue;
-  font-family: $primaryFont;
-  font-size: 2rem;
-  line-height: 3rem;
+  font-family: $primary-font;
+  font-size: $ic-300;
+  line-height: 1.5;
 }
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: $secondaryFont;
-  font-weight: 500;
-  color: $darkBlue;
-  line-height: 1.1em;
-  margin-top: 0;
-  margin-bottom: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0.65em;
 }
+
 p {
-  margin: 0 auto 20px auto;
+  margin: 0;
 }
-/* Font-scale of a major third */
+
+.max-80 {
+  max-width: $measure;
+}
+
 h1,
-.g1 {
-  font-size: 3rem;
-  @include breakpoint(md) {
-    font-size: 4.8rem;
-  }
+.h1 {
+  font-size: $ic-600;
 }
+
 h2,
-.g2 {
-  font-size: 3.2rem;
-  @include breakpoint(md) {
-    font-size: 4.6rem;
-  }
+.h2 {
+  font-size: $ic-500;
 }
+
 h3,
-.g3 {
-  font-size: 3.2rem;
-  @include breakpoint(md) {
-    font-size: 4.6rem;
-  }
+.h3 {
+  font-size: $ic-400;
 }
+
 h4,
-.g4 {
-  font-size: 3rem;
+.h4 {
+  font-size: $ic-300;
 }
+
 h5,
-.g5 {
-  font-size: 2rem;
+.h5 {
+  font-size: $ic-200;
 }
+
 h6,
-.g6 {
-  font-size: 2rem;
+.h6 {
+  font-size: $ic-200;
 }
-/* Type Scale Gears*/
-.g7 {
-  font-size: 1.8rem;
-}
-.g8 {
-  font-size: 1.6rem;
-}
-.text-left {
-  text-align: left !important;
-}
-.text-right {
-  text-align: right !important;
-}
-.text-center {
-  text-align: center !important;
-}
-@include breakpoint(sm) {
-  .text-left-s {
-    text-align: left !important;
-  }
-  .text-right-s {
-    text-align: right !important;
-  }
-  .text-center-s {
-    text-align: center !important;
-  }
-}
+
 @include breakpoint(md) {
-  .text-left-m {
-    text-align: left !important;
+  h1,
+  .h1 {
+    font-size: $ic-700;
   }
-  .text-right-m {
-    text-align: right !important;
+
+  h2,
+  .h2 {
+    font-size: $ic-600;
   }
-  .text-center-m {
-    text-align: center !important;
+
+  h3,
+  .h3 {
+    font-size: $ic-500;
+  }
+
+  h4,
+  .h4 {
+    font-size: $ic-400;
+  }
+
+  h5,
+  .h5 {
+    font-size: $ic-300;
   }
 }
-@include breakpoint(lg) {
-  .text-left-l {
-    text-align: left !important;
+
+article {
+  > ul,
+  > ol {
+    > li + li {
+      margin-top: $ic-100;
+    }
   }
-  .text-right-l {
-    text-align: right !important;
-  }
-  .text-center-l {
-    text-align: center !important;
+
+  * {
+    + h2 {
+      margin-top: 4rem;
+    }
+
+    + h3 {
+      margin-top: 2rem;
+    }
   }
 }
+
 .i {
   font-style: italic;
 }
+
 .b {
   font-weight: bold;
 }
-.underline {
-  position: relative;
-  &:after {
-    position: absolute;
-    content: "";
-    height: 6px;
-    width: 100%;
-    bottom: -5px;
-    left: 0;
-    background-color: $medOrange;
-  }
-}
-.underline-left {
-  position: relative;
-  display: block;
-  background-color: $medOrange;
-  height: 6px;
-  width: 14rem;
-  margin: 3rem 0;
-}
-.strike {
-  text-decoration: line-through;
-}
+
 .shift-first {
   text-transform: capitalize;
 }
+
 .shift-up {
   text-transform: uppercase;
 }
-.fw4 {
-  font-weight: 400;
-}
-.fw5 {
-  font-weight: 500;
-}
-.fw6 {
-  font-weight: 600;
-}
-.fw7 {
-  font-weight: 700;
-}
-.fw8 {
-  font-weight: 800;
-}
-.fw9 {
-  font-weight: 900;
-}
+
 .no-margin {
   margin: 0;
 }
+
 .text-white {
   color: $white;
+}
+
+.text-primary {
+  color: $primary-color;
 }

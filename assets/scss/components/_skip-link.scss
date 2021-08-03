@@ -1,0 +1,23 @@
+.screen-reader-skip-to-content {
+  position: absolute;
+  left: 6px;
+  top: 7px;
+  background: $primary-color;
+  color: $white !important;
+  padding: 20px;
+  z-index: 1000000000;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+
+  &:not(:focus) {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: auto;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap;
+  }
+}

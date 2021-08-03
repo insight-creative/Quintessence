@@ -24,14 +24,6 @@ summaryLength = 30
   googleAnalytics = " " # Your ID# search 
   minifyBundles = true
 
-# CSS Plugins
-  [[params.plugins.css]]
-  link = "plugins/swiper/css/swiper-bundle.min.css"
-
-# JS Plugins
-  [[params.plugins.js]]
-  link = "plugins/swiper/js/swiper-bundle.min.js"
-
 # add redirects/headers
   [outputs]
   home = ["HTML", "RSS", "REDIRECTS", "HEADERS"]

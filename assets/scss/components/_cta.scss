@@ -1,0 +1,21 @@
+.cta {
+  padding: $ic-600 0 0 0;
+  margin: $ic-600 0 0 0;
+  position: relative;
+
+  svg {
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+  }
+
+  img {
+    max-width: 40rem;
+    margin: 0 auto;
+  }
+
+  @include breakpoint(md) {
+    padding: $ic-700 0 0 0;
+    margin: $ic-700 0 0 0;
+  }
+}

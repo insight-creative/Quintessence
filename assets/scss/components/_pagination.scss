@@ -19,10 +19,10 @@
     align-items: center;
     margin: 0 10px;
     color: $white;
-    background: $primaryColor;
+    background: $primary-color;
     &:hover,
     &:focus {
-      background: $secondaryColor;
+      background: $secondary-color;
     }
     svg {
       fill: $white;

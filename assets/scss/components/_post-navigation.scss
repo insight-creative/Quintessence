@@ -1,5 +1,5 @@
 .post-navigation {
-  border-top: 1px solid $secondaryColor;
+  border-top: 1px solid $secondary-color;
   padding: 2rem 0 0 0;
   justify-content: space-between;
   display: none;
@@ -13,7 +13,7 @@
     &:hover,
     &:focus {
       svg {
-        fill: $secondaryColor;
+        fill: $secondary-color;
       }
     }
   }
@@ -41,7 +41,7 @@
   }
   svg {
     width: 20px;
-    fill: $primaryColor;
+    fill: $primary-color;
     transition: 0.3s ease;
   }
 }

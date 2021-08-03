@@ -1,5 +1,5 @@
 {{ define "main" }}
-<section class="container blog-container" data-scroll-section>
+<section class="wrapper-wide blog-container">
   {{ range .Paginator.Pages.ByDate.Reverse }}
   <article class="fade-up blog-summary">
     <a href="{{ .Permalink }}" class="blog-summary__link">

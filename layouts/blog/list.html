@@ -1,0 +1,37 @@
+{{ define "main" }}
+{{ partial "blog/blog-hero" . }}
+<section class="wrapper-wide blog-container padding-top-10
+padding-bottom-10" data-scroll-section>
+  {{ range .Paginator.Pages.ByDate.Reverse }}
+  <article class="fade-up blog-summary">
+    <a href="{{ .Permalink }}" class="blog-summary__link">
+      <div class="flex flex-column flex-row-m">
+        <div class="w-100 w-30-m">
+          <div class="blog-summary__image-wrap">
+            {{ $has_image := .Params.image }}
+            {{ if $has_image }}
+            <img src="{{ .Permalink }}{{ .Params.image }}" alt="" class="blog-summary__img img-responsive zoom-images">
+            {{ else }}
+            <img src="https://source.unsplash.com/random/800x600" alt="" class="blog-summary__img img-responsive zoom-images">
+            {{  end }}
+          </div>
+        </div>
+        <div class="w-100 w-70-m">
+          <div class="blog-summary__content">
+            <h3 class="blog-summary__title g4">{{ .Title }}</h3>
+            {{ partial "blog/entry-meta" . }}
+            <p class="blog-summary__summary">
+              {{ if .Params.summary }}{{ .Params.summary | safeHTML }}{{ else }}{{ .Summary  | safeHTML }}{{ end }}
+            </p>
+            <span class="blog-summary__read-more">
+              Read More {{ partial "svg-icons/arrow-right.svg" . }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </article>
+  {{ end }}
+  {{ partial "blog/custom-pagination.html" . }}
+</section>
+{{ end }}

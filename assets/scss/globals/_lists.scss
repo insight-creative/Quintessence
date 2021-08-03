@@ -1,5 +1,7 @@
-.list { list-style-type: none; }
-ul {
-	padding: 15px;
-	margin: 0;
+.list {
+  list-style-type: none;
+}
+
+ul li + li {
+  margin-top: 0.5em;
 }
