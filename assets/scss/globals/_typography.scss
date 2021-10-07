@@ -57,7 +57,7 @@ select,
 optgroup,
 textarea {
   font-family: $primary-font;
-  font-size: $ic-300;
+  font-size: $ic-200;
   line-height: 1.5;
 }
 
@@ -68,12 +68,8 @@ h4,
 h5,
 h6 {
   font-weight: 700;
-  line-height: 1.2;
+  line-height: calc(2px + 2ex + 2px);
   margin-bottom: 0.65em;
-}
-
-p {
-  margin: 0;
 }
 
 .max-80 {
@@ -82,59 +78,32 @@ p {
 
 h1,
 .h1 {
-  font-size: $ic-600;
+  font-size: clamp($ic-600, 4vw, $ic-1000);
 }
 
 h2,
 .h2 {
-  font-size: $ic-500;
+  font-size: clamp($ic-400, 4vw, $ic-600);
 }
 
 h3,
 .h3 {
-  font-size: $ic-400;
+  font-size: clamp($ic-300, 4vw, $ic-500);
 }
 
 h4,
 .h4 {
-  font-size: $ic-300;
+  font-size: clamp($ic-200, 4vw, $ic-400);
 }
 
 h5,
 .h5 {
-  font-size: $ic-200;
+  font-size: clamp($ic-100, 4vw, $ic-300);
 }
 
 h6,
 .h6 {
-  font-size: $ic-200;
-}
-
-@include breakpoint(md) {
-  h1,
-  .h1 {
-    font-size: $ic-700;
-  }
-
-  h2,
-  .h2 {
-    font-size: $ic-600;
-  }
-
-  h3,
-  .h3 {
-    font-size: $ic-500;
-  }
-
-  h4,
-  .h4 {
-    font-size: $ic-400;
-  }
-
-  h5,
-  .h5 {
-    font-size: $ic-300;
-  }
+  font-size: $ic-100;
 }
 
 article {

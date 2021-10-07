@@ -1,0 +1,16 @@
+logo: ""
+business_name: Quintessence
+phone: 555-555-5555
+email: "email@emailaddress.com"
+address: "1234 Test St"
+hours: "9am - 5pm"
+social_media:
+  - social:
+      title: Facebook
+      link: https://facebook.com
+  - social:
+      title: LinkedIn
+      link: https://linkedin.com
+  - social:
+      title: YouTube
+      link: https://youtube.com

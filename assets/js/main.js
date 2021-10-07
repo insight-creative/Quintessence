@@ -7,9 +7,35 @@ import { pageTransitionOut, pageTransitionIn, contentAnimation, updateMenu } fro
 barba.use(barbaPrefetch);
 gsap.registerPlugin(ScrollTrigger);
 
-const menu = document.querySelector(".nav-list");
+const mobileMenu = document.querySelector(".site-header__mobile-nav");
 const hamburger = document.querySelector(".hamburger");
-const navClasses = document.querySelector('.site-header');
+const siteHeader = document.querySelector('.site-header');
+const searchButton = document.querySelector('.search-toggle');
+const searchModal = document.querySelector('.search-modal');
+const searchIcon = document.querySelector('#search')
+const closeSearchIcon = document.querySelector('#close')
+
+searchButton.addEventListener('click', event => {
+    console.log(searchModal)
+    if (searchModal.classList.contains('search-open')) {
+        // close the search modal
+        // change closed icon back to the search icon
+        searchModal.classList.remove('search-open')
+        searchIcon.classList.remove('icon-hidden')
+        closeSearchIcon.classList.add('icon-hidden')
+    } else {
+        // open the search modal
+        // change search icon to close icon
+        searchModal.classList.add('search-open')
+        searchIcon.classList.add('icon-hidden')
+        closeSearchIcon.classList.remove('icon-hidden')
+    }
+})
+
+const mobileMenuHeight = mobileMenu.getBoundingClientRect().height
+
+mobileMenu.style.height = 0
+
 let scrollState = 0;
 
 var scrollTop = function() {
@@ -27,13 +53,13 @@ var scrollDetect = function(collapse, expand) {
 };
 
 function collapseNav() {
-  navClasses.classList.remove('expand');
-  navClasses.classList.add('collapse');
+  siteHeader.classList.remove('expand');
+  siteHeader.classList.add('collapse');
 }
 
 function expandNav() {
-  navClasses.classList.remove('collapse');
-  navClasses.classList.add('expand');
+  siteHeader.classList.remove('collapse');
+  siteHeader.classList.add('expand');
 }
 
 window.addEventListener("scroll", function() {
@@ -43,13 +69,15 @@ window.addEventListener("scroll", function() {
 hamburger.addEventListener("click", toggleMobileMenu);
 
 function toggleMobileMenu() {
-    if(menu.classList.contains("nav-open")) {
+    if(mobileMenu.classList.contains("nav-open")) {
         this.setAttribute("aria-expanded", "false");
         this.setAttribute("aria-label", "open mobile menu");
-        menu.classList.remove("nav-open");
+        mobileMenu.classList.remove("nav-open");
+        mobileMenu.style.height = 0
         hamburger.classList.remove("is-active");
     } else {
-        menu.classList.add("nav-open");
+        mobileMenu.classList.add("nav-open");
+        mobileMenu.style.height = mobileMenuHeight + 'px'
         hamburger.classList.add("is-active");
         this.setAttribute("aria-expanded","true");
         this.setAttribute("aria-label","close mobile menu");

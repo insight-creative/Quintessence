@@ -48,6 +48,10 @@ hugo server
 │ package.json
 ```
 
+## Algolia Search
+
+Quickly add a dynamic search feature with Algolia and the Algolia + Netlify plugin. To create a new set of app credentials navigate to https://crawler.algolia.com/admin/netlify and login to your Algoia account. Link your new site through git and the Algolia plugin will be installed. Update your API keys to match your new application. Learn more in the [Algolia docs](https://www.algolia.com/doc/tools/crawler/netlify-plugin/quick-start/).
+
 ## Deploy to Netlify
 
 You can deploy directly to Netlify using this button:

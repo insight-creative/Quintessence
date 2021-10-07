@@ -4,17 +4,6 @@
   padding: $ic-700 0;
   font-size: $ic-200;
 
-  &__wrapper {
-    display: grid;
-    gap: $ic-400;
-
-    @include breakpoint(md) {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: $ic-400;
-    }
-  }
-
   a {
     color: $white;
     text-decoration: none;
@@ -31,33 +20,21 @@
   }
 
   &__nav {
-    display: flex;
-    justify-content: center;
-
     ul {
-      margin-bottom: 0;
+      margin: 0;
     }
   }
 
   &__nav-list {
-    display: flex;
     padding: 0;
   }
 
   &__nav-list-item {
-    display: flex;
     list-style-type: none;
     margin-top: 0;
   }
 
-  &__social-grid {
-    display: flex;
-    gap: 1rem;
+  &__nav-item {
+    padding: $ic-100 $ic-200;
   }
-
-  svg {
-    width: $ic-600;
-    fill: $white;
-  }
-
 }

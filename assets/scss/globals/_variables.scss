@@ -15,19 +15,26 @@ $blue-shadow: rgba(43, 59, 147, 0.2);
 $primary-font: "Poppins", sans-serif;
 $secondary-font: "Poppins", sans-serif;
 
-$mobile-header: 68px;
-$desktop-header: 88px;
+$mobile-header: 89px;
+$desktop-header: 112px;
 
 // Scale and rhythm based on a major third
-$ic-100: 0.8rem;
-$ic-200: 1rem;
-$ic-300: 1.25rem;
-$ic-400: 1.563rem;
-$ic-500: 1.953rem;
-$ic-600: 2.441rem;
-$ic-700: 3.052rem;
-$ic-800: 3.815rem;
-$ic-900: 4.769rem;
+$scale: 1.25;
+
+$ic--200: 1rem / $scale / $scale;
+$ic--100: 1rem / $scale;
+$ic-100: 1rem;
+$ic-200: 1rem * $scale;
+$ic-300: 1rem * $scale * $scale;
+$ic-400: 1rem * $scale * $scale * $scale;
+$ic-500: 1rem * $scale * $scale * $scale * $scale;
+$ic-600: 1rem * $scale * $scale * $scale * $scale * $scale;
+$ic-700: 1rem * $scale * $scale * $scale * $scale * $scale * $scale;
+$ic-800: 1rem * $scale * $scale * $scale * $scale * $scale * $scale * $scale;
+$ic-900: 1rem * $scale * $scale * $scale * $scale * $scale * $scale * $scale *
+  $scale;
+$ic-1000: 1rem * $scale * $scale * $scale * $scale * $scale * $scale * $scale *
+  $scale * $scale;
 
 // // Scale and rhythm based on a perfect fourth
 // $ic-100: 0.75rem;

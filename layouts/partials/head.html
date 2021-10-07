@@ -46,9 +46,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700&display=swap" rel="stylesheet">
     {{ "<!--Favicon-->" | safeHTML }}
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="icon" href="/images/favicon.svg">
+    <link rel="mask-icon" href="mask-icon.svg" color="#000000">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js"></script>
+    <script type="text/javascript">
+    algoliasearchNetlify({
+        appId: 'ZNAWLJVCPG',
+        apiKey: 'eb08ea4c8435e9321f488fd347a35811',
+        siteId: '5f4e2ce7-9dac-4930-97dd-88fc4cc8a087',
+        branch: 'master',
+        selector: 'div#search',
+    });
+    </script>
 
     {{ template "_internal/google_analytics.html" . }}
 

@@ -2,8 +2,8 @@
 <a class="screen-reader-skip-to-content" href="#main-content" tabindex="0">Skip to main content</a>
 <a class="screen-reader-skip-to-content" href="#footer" tabindex="0">Skip to footer content</a>
 <header class="site-header" role="banner">
-  <div class="nav primary-nav wrapper-wide">
-    <div class="logo-wrapper">
+  <div class="site-header__wrapper wrapper-md">
+    <div class="site-header__logo">
       <a class="brand-logo" href="{{ site.BaseURL }}">
         {{ if site.Params.logo }}
           <img src="{{ site.Params.logo | absURL }}" alt="{{ site.Title }}" class="img-responsive dim" width="200" height="100">
@@ -12,7 +12,7 @@
         {{ end }}
       </a>
     </div>
-    <nav role="navigation" aria-label="primary navigation">
+    <nav class="site-header__nav" role="navigation" aria-label="primary navigation">
       {{ with .Site.Menus.main }}
       <ul class="nav-list" role="list">
           {{ range . }}
@@ -21,9 +21,38 @@
               title="{{ .Name }}">{{ .Name }}</a>
           </li>
           {{ end }}
+          <li class="nav-list__item"><button type="button" class="search-toggle" aria-label="search-toggle">{{ partialCached "svg-icons/search.svg" . }}{{ partialCached "svg-icons/close.svg" . }}</button></li>
         </ul>
       {{ end }}
     </nav>
+    <div class="site-header__mobile-nav">
+      <div class="site-header__mobile-nav-inner">
+        <ul  class="site-header__mobile-nav-menu">
+          <li><a href="/about/">About</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+        <ul class="site-header__contact">
+          <li><a href="/contact/" class="btn btn-primary">Contact</a></li>
+          <li><a href="/request-a-quote/" class="btn btn-primary">Request a Quote</a></li>
+        </ul>
+        <ul class="site-header__social">
+          {{ range .Site.Data.site_settings.social_media }}
+          <li class="site-header__social-list-item">
+            <a href="{{ .social.link }}" class="site-header__social-icon" target="_blank" rel="noopener noreferrer">
+              {{ if eq .social.title "Facebook" }}
+              {{ partial "svg-icons/facebook.svg" . }}
+              {{ else if eq .social.title "LinkedIn"}}
+              {{ partial "svg-icons/linkedin.svg" . }}
+              {{ else if eq .social.title "YouTube"}}
+              {{ partial "svg-icons/youtube.svg" . }}
+              {{ end }}
+              <span class="visually-hidden">{{ .social.title }}</span>
+            </a>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+    </div>
     <button class="hamburger hamburger--slider" type="button" aria-label="open mobile menu" aria-expanded="false">
       <span class="hamburger-box">
         <span class="hamburger-inner"></span>
@@ -31,3 +60,6 @@
     </button>
   </div>
 </header>
+<div class="search-modal">
+  <div id="search"></div>
+</div>

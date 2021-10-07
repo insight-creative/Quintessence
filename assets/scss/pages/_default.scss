@@ -1,7 +1,0 @@
-.site-main {
-  margin-top: $mobile-header;
-
-  @include breakpoint(lg) {
-    margin-top: $desktop-header;
-  }
-}
