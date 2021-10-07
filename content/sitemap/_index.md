@@ -1,4 +1,6 @@
 ---
 title: Sitemap
-description:
+seo:
+  title:
+  description:
 ---

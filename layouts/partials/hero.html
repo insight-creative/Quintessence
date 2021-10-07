@@ -1,6 +1,6 @@
 {{ $heroClass := lower .Page.Title }}
 <div class="hero {{ anchorize $heroClass }}-hero">
-  {{ $heroimage := (.Resources.GetMatch (index .Params.hero.hero_image)) }}
+  {{ $heroimage := (.Resources.GetMatch (index .image)) }}
 
   {{ $webp_src_set := ""}}
   {{ $jpg_src_set := ""}}
@@ -30,9 +30,9 @@
   <div class="hero__inner short-hero__inner w-100">
     <div class="hero__content text-center text-white">
       <h1 class="hero__title short-hero__title text-white no-margin">
-        {{ .Params.hero.heading | markdownify }}
+        {{ .heading | markdownify }}
       </h1>
-      <p>{{ .Params.hero.body | markdownify }}</p>
+      <p>{{ .body | markdownify }}</p>
     </div>
   </div>
 </div>

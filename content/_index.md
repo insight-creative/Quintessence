@@ -1,4 +1,6 @@
 ---
 title: Home
-description:
+seo:
+  title:
+  description:
 ---

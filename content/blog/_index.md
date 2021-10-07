@@ -1,4 +1,6 @@
 ---
 title: Blog
-description:
+seo:
+  title:
+  description:
 ---

@@ -1,4 +1,6 @@
 ---
 title: Contact
-description:
+seo:
+  title:
+  description:
 ---
