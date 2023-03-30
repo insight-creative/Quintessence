@@ -6,17 +6,12 @@ $gray: #a8a8a8;
 $black: #232323;
 $white: #ffffff;
 
-// overlays
-$white-overlay: rgba(255, 255, 255, 0.9);
-
-$blue-shadow: rgba(43, 59, 147, 0.2);
-
 // Fonts
 $primary-font: "Poppins", sans-serif;
 $secondary-font: "Poppins", sans-serif;
 
-$mobile-header: 89px;
-$desktop-header: 112px;
+$mobile-header: 96px;
+$desktop-header: 78px;
 
 // Scale and rhythm based on a major third
 $scale: 1.25;
@@ -36,15 +31,10 @@ $ic-900: 1rem * $scale * $scale * $scale * $scale * $scale * $scale * $scale *
 $ic-1000: 1rem * $scale * $scale * $scale * $scale * $scale * $scale * $scale *
   $scale * $scale;
 
-// // Scale and rhythm based on a perfect fourth
-// $ic-100: 0.75rem;
-// $ic-200: 1rem;
-// $ic-300: 1.333rem;
-// $ic-400: 1.777rem;
-// $ic-500: 2.369rem;
-// $ic-600: 3.157rem;
-// $ic-700: 4.209rem;
-
 $measure-short: 60ch;
 $measure: 80ch;
 $measure-long: 90ch;
+
+$transition: .3s ease-in-out;
+
+$radius: 5px;

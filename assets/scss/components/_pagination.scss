@@ -1,40 +1,22 @@
 .pagination {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin: 4rem 0;
-  .pagination__next,
-  .pagination__previous,
-  .pagination__numbers {
-    position: relative;
-    z-index: 1;
-    letter-spacing: 1px;
-    font-weight: 700;
-    letter-spacing: 0.015em;
-    padding: 1rem 2rem;
-    text-decoration: none;
-    border-radius: 15px;
-    transition: 0.3s ease-in-out;
-    display: flex;
-    align-items: center;
-    margin: 0 10px;
-    color: $white;
-    background: $primary-color;
-    &:hover,
-    &:focus {
-      background: $secondary-color;
-    }
-    svg {
-      fill: $white;
-      stroke: $white;
-      width: 20px;
-      transition: 0.3s ease-out;
-    }
+  justify-content: space-between;
+  margin-top: 4rem;
+
+  @include breakpoint(md) {
+    justify-content: center;
   }
+
+  &__current {
+    opacity: 0.7;
+  }
+
   &__next {
     svg {
-      margin-left: 5px;
+      margin-left: $ic--200;
     }
+
     &:hover,
     &:focus {
       svg {
@@ -42,21 +24,62 @@
       }
     }
   }
-  &__numbers {
-    margin: 0 5px;
-  }
-  &__current {
-    opacity: 0.7;
-  }
+
   &__previous {
     svg {
-      margin-right: 5px;
+      margin-right: $ic--200;
     }
+
     &:hover,
     &:focus {
       svg {
         transform: translateX(-5px);
       }
     }
+  }
+}
+
+.pagination__next,
+.pagination__previous {
+  display: flex;
+}
+
+.pagination__next,
+.pagination__previous,
+.pagination__numbers {
+  font-size: $ic-100;
+  font-weight: 700;
+  padding: $ic-100 $ic-400;
+  text-decoration: none;
+  border-radius: $radius;
+  transition: $transition;
+  align-items: center;
+  margin: 0 10px;
+  color: $white;
+  background: $primary-color;
+
+  &:hover,
+  &:focus {
+    background: rgba($primary-color, 0.9);
+  }
+
+  svg {
+    stroke: $white;
+    width: $ic-200;
+    height: $ic-200;
+    transition: $transition;
+    position: relative;
+    top: -1px;
+  }
+}
+
+.pagination__numbers {
+  margin: 0 5px;
+  display: none;
+
+  @include breakpoint(sm) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }

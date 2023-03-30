@@ -1,0 +1,123 @@
+collections_config:
+  pages:
+    _enabled_editors:
+      - visual
+  careers:
+    add_options:
+      - name: Add New Job Post
+    schemas:
+      default:
+        path: schemas/careers.md
+  blog:
+    add_options:
+      - name: Add A New Blog Post
+    schemas:
+      default:
+        path: schemas/blog.md
+
+_inputs:
+  menu:
+    hidden: true
+  layout:
+    hidden: true
+  logo:
+    type: image
+    comment: Set your brand logo.
+  footer_logo:
+    type: image
+    comment: Set your brand logo in the footer.
+  featured_image:
+    type: image
+    comment: Set your featured image. Featured images are used as your SEO preview image when shared on social media or when your page is found in organic search results.
+  hero.image_url:
+    type: image
+    comment: This is the main image used at the top of every page.
+    options:
+      accepts_mime_types:
+        - image/jpeg
+  image_url:
+    type: image
+    comment: Upload a .jpg image. Make sure to check the documentation for image handling best practices before adding images to the website.
+    options:
+      accepts_mime_types:
+        - image/jpeg
+  icon:
+    type: image
+    options:
+      accepts_mime_types:
+        - image/jpeg
+        - image/svg+xml
+  heading:
+    type: text
+  url:
+    type: text
+    comment: Set a custom URL for your page. ex. /our-team/first-m-last/
+  video:
+    type: text
+    comment: Please reach out to Insight Creative, Inc. if you need help changing a video.
+  background_color:
+    type: select
+    comment: Choose between "white" or "gray" as a background color
+    options:
+      values:
+        - white
+        - gray
+  body:
+    type: markdown
+  button.button_url:
+    type: url
+  hero.button_url:
+    type: url
+  cta.body:
+    type: markdown
+
+_snippets:
+  responsive_image:
+    template: hugo_shortcode_named_args
+    inline: false
+    preview:
+      view: gallery
+      text: Responsive Image
+      subtext: Full-width image with optimized srcset
+      gallery:
+        image:
+          - key: image_url
+        fit: cover
+    definitions:
+      shortcode_name: responsive-image
+      named_args:
+        - editor_key: image_url
+          type: string
+        - editor_key: image_alt
+          type: string
+    _inputs:
+      image_url:
+        type: image
+      image_alt:
+        type: text
+
+_editables:
+  text:
+    italic: true
+  block:
+    format: p h3
+    undo: true
+    redo: true
+  content:
+    blockquote: true
+    bold: true
+    format: p h2 h3 h4 h5 h6 pre address div
+    italic: true
+    strike: true
+    subscript: true
+    superscript: true
+    underline: true
+    link: true
+    bulletedlist: true
+    numberedlist: true
+    embed: true
+    horizontalrule: true
+    table: true
+    undo: true
+    redo: true
+    snippet: true

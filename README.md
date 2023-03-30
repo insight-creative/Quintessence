@@ -2,13 +2,13 @@
 
 The [Hugo](https://gohugo.io/) boilerplate we use for our projects.
 
-**Disclaimer** - This boilerplate has been heavily integrated with [Netlify](https://www.netlify.com/), and therefore many features are specific to the Netlify platform and may not work with other hosting providers.
+**Disclaimer** - This boilerplate has been heavily integrated with [Netlify](https://www.netlify.com/) or [CloudCannon](https://cloudcannon.com/), and therefore many features are specific to these platforms and may not work with other hosting providers.
 
 **Disclaimer** - Quintessence is a boilerplate (starter kit) for Hugo projects. It's not a Hugo theme. Check the [theme](#themes) docs for more information.
 
 ## Getting Started
 
-To get started, you can either clone the repository, or deploy straight to [Netlify](#deploy-to-netlify). Then run the following from the project root:
+To get started, you can either clone the repository. Then run the following from the project root:
 
 ```
 npm install

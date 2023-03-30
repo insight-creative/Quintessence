@@ -6,8 +6,8 @@
 
 <div class="pagination">
     {{ if .Paginator.HasPrev }}
-    <a class="pagination__numbers pagination__previous" href="{{ .Paginator.Prev.URL }}"
-        role="button">{{ partial "svg-icons/arrow-left.svg" . }} Previous</a>
+    <a class="pagination__previous btn btn-primary" href="{{ .Paginator.Prev.URL }}"
+        role="button">{{ partial "svg-icons/chevron-left.svg" . }}Previous</a>
     <a class="pagination__numbers" href="{{ .Paginator.First.URL }}" role="button">1</a>
     {{ end }}
 
@@ -31,8 +31,8 @@
 
     {{ if .Paginator.HasNext -}}
     <a class="pagination__numbers" href="{{ .Paginator.Last.URL }}" role="button">{{ .Paginator.TotalPages }}</a>
-    <a class="pagination__numbers pagination__next" href="{{ .Paginator.Next.URL }}"
-        role="button">Next{{ partial "svg-icons/arrow-right.svg" . }}</a>
+    <a class="pagination__next btn btn-primary" href="{{ .Paginator.Next.URL }}"
+        role="button">Next{{ partial "svg-icons/chevron-right.svg" . }}</a>
     {{- end }}
 </div>
 {{ end -}}

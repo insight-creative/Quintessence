@@ -1,0 +1,79 @@
+.breadcrumbs {
+  &__inner {
+    flex-wrap: nowrap;
+    height: 32px;
+    overflow: hidden;
+  }
+
+  svg {
+    position: relative;
+    top: -2px;
+    stroke: $light-gray;
+    width: $ic-100;
+    height: $ic-100;
+  }
+
+  &__nav {
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding: $ic-100 0;
+    margin: 0;
+
+    @include breakpoint(md) {
+      position: relative;
+      top: 8px;
+    }
+  }
+
+  &__list-item {
+    list-style-type: none;
+    position: relative;
+    font-size: $ic--100;
+    max-width: none;
+    margin: 0;
+
+    &::after {
+      position: absolute;
+      content: "/";
+      color: $white;
+    }
+
+    a {
+      text-decoration: none;
+
+      font-family: $secondary-font;
+      font-size: $ic--100;
+      color: $white;
+      padding-right: $ic--100;
+
+      white-space: nowrap;
+    }
+  }
+
+  &__list-item + &__list-item {
+    a {
+      padding-left: $ic--100;
+    }
+  }
+
+  .active {
+    &::after {
+      position: absolute;
+      content: "";
+    }
+
+    a {
+      color: rgba($white, 0.7);
+      pointer-events: none;
+    }
+  }
+}
+
+.hero .breadcrumbs {
+  display: none;
+
+  @include breakpoint(sm) {
+    display: block;
+  }
+}

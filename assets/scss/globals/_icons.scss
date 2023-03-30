@@ -1,3 +1,85 @@
-svg {
-  max-width: $ic-200;
+.icon-sm {
+  inline-size: $ic-100;
+  block-size: $ic-100;
+
+  svg {
+    inline-size: 100%;
+    block-size: 100%;
+  }
+}
+
+.icon-md {
+  inline-size: $ic-200;
+  block-size: $ic-200;
+
+  svg {
+    inline-size: 100%;
+    block-size: 100%;
+  }
+}
+
+.icon-lg {
+  inline-size: $ic-400;
+  block-size: $ic-400;
+
+  svg {
+    inline-size: 100%;
+    block-size: 100%;
+  }
+}
+
+.icon-fill-black {
+
+  svg {
+    fill: $black;
+  }
+}
+
+.icon-stroke-black {
+
+  svg {
+    stroke: $black;
+  }
+}
+
+.icon-fill-white {
+
+  svg {
+    fill: $white;
+  }
+}
+
+.icon-stroke-white {
+
+  svg {
+    stroke: $white;
+  }
+}
+
+.icon-fill-primary {
+
+  svg {
+    fill: $primary-color;
+  }
+}
+
+.icon-stroke-primary {
+
+  svg {
+    stroke: $primary-color;
+  }
+}
+
+.icon-fill-secondary {
+
+  svg {
+    fill: $secondary-color;
+  }
+}
+
+.icon-stroke-secondary {
+
+  svg {
+    stroke: $secondary-color;
+  }
 }

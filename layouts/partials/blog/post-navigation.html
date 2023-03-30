@@ -1,14 +1,22 @@
 {{ if or .PrevInSection .NextInSection }}
-    <div class="post-navigation flex">
-        <div class="post-navigation__prev">
-            {{ with .PrevInSection }}
-            <a href="{{ .Permalink }}" class="post-navigation__link">{{ partial "svg-icons/arrow-left.svg" . }} Previous Post</a>
-            {{ end }}
+<div class="wrapper-lg">
+    <div class="post-navigation">
+        <div class="post-navigation__back flex flex-column flex-center">
+            <a href="/blog/" class="post-navigation__link">Back to all posts</a>
         </div>
-        <div class="post-navigation__next">
-            {{ with .NextInSection }}
-            <a href="{{ .Permalink }}" class="post-navigation__link">Next Post {{ partial "svg-icons/arrow-right.svg" . }}</a>
-            {{ end }}
+        <div class="flex flex-center flex-justify-between">
+            <div class="post-navigation__prev">
+                {{ with .PrevInSection }}
+                <a href="{{ .Permalink }}" class="post-navigation__link flex flex-center">{{ partialCached "svg-icons/chevron-left.svg" . }} Previous</a>
+                {{ end }}
+            </div>
+            <div> / </div>
+            <div class="post-navigation__next">
+                {{ with .NextInSection }}
+                <a href="{{ .Permalink }}" class="post-navigation__link flex flex-center">Next {{ partialCached "svg-icons/chevron-right.svg" . }}</a>
+                {{ end }}
+            </div>
         </div>
     </div>
+</div>
 {{ end }}

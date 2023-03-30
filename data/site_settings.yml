@@ -1,16 +1,25 @@
-logo: ""
+logo: 
+footer_logo: 
 business_name: Quintessence
 phone: 555-555-5555
-email: "email@emailaddress.com"
-address: "1234 Test St"
-hours: "9am - 5pm"
+fax:
+email: email@emailaddress.com
+address:
+  city: Green Bay
+  state: WI
+  street: 1234 Test St
+  zip: 54302
+google_maps_url: https://www.google.com/maps
 social_media:
-  - social:
-      title: Facebook
-      link: https://facebook.com
-  - social:
-      title: LinkedIn
-      link: https://linkedin.com
-  - social:
-      title: YouTube
-      link: https://youtube.com
+  - title: Facebook
+    link: https://facebook.com
+  - title: LinkedIn
+    link: https://www.linkedin.com/
+  - title: YouTube
+    link: https://www.youtube.com/
+  - title: Instagram
+    link: https://www.instagram.com/
+  - title: Twitter
+    link: https://www.twitter.com/
+  - title: TikTok
+    link: https://www.tiktok.com/

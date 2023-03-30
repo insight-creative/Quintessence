@@ -1,65 +1,94 @@
 {{ "<!-- Header -->" | safeHTML }}
-<a class="screen-reader-skip-to-content" href="#main-content" tabindex="0">Skip to main content</a>
-<a class="screen-reader-skip-to-content" href="#footer" tabindex="0">Skip to footer content</a>
-<header class="site-header" role="banner">
-  <div class="site-header__wrapper wrapper-md">
-    <div class="site-header__logo">
+<a class="screen-reader-skip-to-content" href="#main-content" tabindex="0" aria-label="Skip to main content">Skip to main content</a>
+<a class="screen-reader-skip-to-content" href="#footer" tabindex="0" aria-label="Skip to footer content">Skip to footer content</a>
+<header class="header">
+  <div class="header__top bg-gray">
+    <div class="header__top-inner flex flex-justify-end w-100 wrapper-lg">
+      <ul class="header__secondary-menu flex flex-center">
+        {{ with .Site.Menus.secondary }}
+          {{ range . }}
+            <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+          {{ end }}
+        {{ end }}
+      </ul>
+    </div>
+  </div>
+  <div class="header__wrapper wrapper-lg">
+    <div class="header__logo">
+      <span class="visually-hidden">Home</span>
       <a class="brand-logo" href="{{ site.BaseURL }}">
-        {{ if site.Params.logo }}
-          <img src="{{ site.Params.logo | absURL }}" alt="{{ site.Title }}" class="img-responsive dim" width="200" height="100">
+        {{ if .Site.Data.site_settings.logo }}
+          <img src="{{ .Site.Data.site_settings.logo }}?auto=format&width=164&height=141" width="164" height="141" alt="{{ .Site.Data.site_settings.business_name }} logo">
         {{ else }}
-          <h1>{{ site.Title }}</h1>
+          {{ partialCached "svg-icons/logo.svg" . }}
         {{ end }}
       </a>
     </div>
-    <nav class="site-header__nav" role="navigation" aria-label="primary navigation">
-      {{ with .Site.Menus.main }}
-      <ul class="nav-list" role="list">
-          {{ range . }}
-          <li class="nav-list__item">
-            <a class="nav-list__link" href="{{ .URL }}" aria-label="{{ .Name }}"
-              title="{{ .Name }}">{{ .Name }}</a>
-          </li>
-          {{ end }}
-          <li class="nav-list__item"><button type="button" class="search-toggle" aria-label="search-toggle">{{ partialCached "svg-icons/search.svg" . }}{{ partialCached "svg-icons/close.svg" . }}</button></li>
-        </ul>
-      {{ end }}
-    </nav>
-    <div class="site-header__mobile-nav">
-      <div class="site-header__mobile-nav-inner">
-        <ul  class="site-header__mobile-nav-menu">
-          <li><a href="/about/">About</a></li>
-          <li><a href="/blog/">Blog</a></li>
-        </ul>
-        <ul class="site-header__contact">
-          <li><a href="/contact/" class="btn btn-primary">Contact</a></li>
-          <li><a href="/request-a-quote/" class="btn btn-primary">Request a Quote</a></li>
-        </ul>
-        <ul class="site-header__social">
-          {{ range .Site.Data.site_settings.social_media }}
-          <li class="site-header__social-list-item">
-            <a href="{{ .social.link }}" class="site-header__social-icon" target="_blank" rel="noopener noreferrer">
-              {{ if eq .social.title "Facebook" }}
-              {{ partial "svg-icons/facebook.svg" . }}
-              {{ else if eq .social.title "LinkedIn"}}
-              {{ partial "svg-icons/linkedin.svg" . }}
-              {{ else if eq .social.title "YouTube"}}
-              {{ partial "svg-icons/youtube.svg" . }}
-              {{ end }}
-              <span class="visually-hidden">{{ .social.title }}</span>
+    <nav class="header__nav flex flex-justify-end" aria-label="primary navigation">
+      <ul class="header__nav-list">
+        {{ $url := .RelPermalink }}
+        {{ range .Site.Menus.main }}
+          {{ if .HasChildren }}
+              <li class="header__nav-list-item has-sub-menu">
+                <a class="header__nav-list-link sub-menu-toggle" id="menu-item-{{ .Name | lower | urlize }}" href="{{ .URL }}" aria-label="{{ .Name }}" aria-haspopup="true" aria-controls="submenu-{{ .Name | lower | urlize }}" aria-expanded="false">{{ .Name }}<span class="header__sub-menu-indicator"></span></a>
+                <div class="header__sub-menu" role="navigation" id="submenu-{{ .Name | lower | urlize }}" aria-labelledby="menu-item-{{ .Name | lower | urlize }}">
+                  <div class="header__sub-menu-inner">
+                    <ul>
+                      {{ range sort .Children "value" "desc" }}
+                        <li class="header__sub-menu-item">
+                            <a class="header__sub-menu-link fs-100 no-decoration w-100 transform-x-8" href="{{ .URL }}" aria-label="{{ .Name }}">{{ .Name }}</a>
+                        </li>
+                      {{ end }}
+                    </ul>                            
+                  </div>
+                </div>
+              </li>
+          {{ else }}
+          <li class="header__nav-list-item">
+            <a class="header__nav-list-link" href="{{ .URL }}" aria-label="{{ .Name }}">
+                {{ .Name }}
             </a>
           </li>
+          {{ end }}    
+        {{ end }}
+      </ul>
+    </nav>
+    <div id="header__mobile-nav" class="header__mobile-nav">
+      <div class="header__mobile-nav-inner">
+        <ul class="header__mobile-nav-menu">
+          {{ range .Site.Menus.main }}
+            {{ if .HasChildren }}
+              <li class="header__mobile-nav-item nav-item-has-dropdown">
+                <a class="header__mobile-nav-link parent fw-500" href="{{ .URL }}" aria-label="{{ .Name }}" aria-haspopup="true" aria-controls="mobile-submenu-{{ .Name | lower | urlize }}" aria-expanded="false" title="{{ .Name }}">{{ .Name }}</a>
+                <button class="toggle-mobile-dropdown" aria-label="open mobile dropdown menu"></button>
+                <ul class="header__mobile-dropdown" id="mobile-submenu-{{ .Name | lower | urlize }}" aria-labelledby="mobile-submenu-{{ .Name | lower | urlize }}">
+                  {{ range .Children }}
+                    <li class="header__mobile-nav-item">
+                      <a class="header__mobile-dropdown-link" href="{{ .URL }}" aria-label="{{ .Name }}" title="{{ .Name }}">{{ .Name }}</a>
+                    </li>
+                  {{ end }}
+                </ul>
+              </li>
+              {{ else }}
+            <li class="header__mobile-nav-item">
+              <a class="header__mobile-nav-link" href="{{ .URL }}" aria-label="{{ .Name }}" title="{{ .Name }}">{{ .Name }}</a>
+            </li>
+            {{ end }}
+          {{ end }}
+          {{ with .Site.Menus.secondary }}
+            {{ range . }}
+              <li class="header__mobile-nav-item">
+                <a class="header__mobile-nav-link" href="{{ .URL }}">{{ .Name }}</a>
+              </li>
+            {{ end }}
           {{ end }}
         </ul>
       </div>
     </div>
-    <button class="hamburger hamburger--slider" type="button" aria-label="open mobile menu" aria-expanded="false">
+    <button class="header__hamburger hamburger hamburger--slider fw-700" type="button" aria-controls="header__mobile-nav" aria-label="open mobile menu" aria-expanded="false">
       <span class="hamburger-box">
         <span class="hamburger-inner"></span>
       </span>
     </button>
   </div>
 </header>
-<div class="search-modal">
-  <div id="search"></div>
-</div>

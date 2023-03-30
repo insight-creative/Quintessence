@@ -1,0 +1,13 @@
+.column-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+
+    .col {
+        flex-grow: 1;
+        flex-basis: 100%;
+
+        @include breakpoint(sm) {
+            flex-basis: 0;
+        }
+    }
+}

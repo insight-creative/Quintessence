@@ -1,7 +1,16 @@
 {{ define "main" }}
 {{ partial "blog/blog-hero" . }}
-    <div class="wrapper flow padding-top-4 padding-bottom-4">
-        {{ .Content  }}
-        {{ partial "blog/post-navigation" . }}
+<section aria-label="Blog Post Content Body" class="block">
+    <div class="post-content wrapper flex flex-column-reverse flex-row-m">
+        <div class="w-100 w-20-m">
+            {{ partial "blog/share-buttons" . }}
+        </div>
+        <div class="w-100 w-80-m">
+            <article class="flow">
+                {{ .Content  }}
+            </article>
+        </div>
     </div>
+</section>
+{{ partial "blog/post-navigation" . }}
 {{ end }}

@@ -2,57 +2,44 @@
   position: relative;
   z-index: 1;
   display: inline-block;
-  font-size: $ic-300;
-  font-weight: 700;
-  padding: 0.875rem 2rem;
-  text-decoration: none;
+  font-family: $secondary-font;
+  font-size: $ic--200;
   text-transform: uppercase;
-  transition: 0.3s ease-in-out;
-}
+  letter-spacing: 2px;
+  font-weight: 700;
+  padding: $ic-100 $ic-400;
+  text-decoration: none;
+  transition: $transition;
+  width: max-content;
 
-.btn-primary {
-  color: $white;
-  background-color: $primary-color;
+  @include breakpoint(sm) {
+    font-size: $ic--100;
+  }
 
   &:hover,
   &:focus {
-    background-color: $secondary-color;
+    transition: $transition;
   }
 }
 
-.btn-secondary {
+.btn--primary {
   color: $white;
   background-color: $secondary-color;
-  border: 2px solid $secondary-color;
-
-  &:hover,
-  &:focus {
-    background-color: $white;
-    color: $secondary-color;
-  }
-}
-
-.btn-white {
-  background-color: $white;
-  border: 2px solid $white;
-
-  &:hover,
-  &:focus {
-    background-color: transparent;
-  }
-}
-
-.btn-text-primary {
-  color: $primary-color;
+  border: 1px solid $secondary-color;
+  transition: $transition;
 
   &:hover,
   &:focus {
     color: $white;
+    background-color: $primary-color;
   }
 }
 
-.btn-text-secondary {
-  color: $secondary-color;
+.btn--secondary {
+  color: $white;
+  background-color: $secondary-color;
+  border: 1px solid $secondary-color;
+  transition: $transition;
 
   &:hover,
   &:focus {
@@ -62,4 +49,37 @@
 
 button {
   cursor: pointer;
+}
+
+.btn--filter {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  padding: $ic-100 0;
+  transition: $transition;
+  margin: 5rem 0 $ic--200 0;
+
+  svg {
+    fill: $primary-color;
+    width: $ic-400;
+    height: $ic-400;
+    margin-right: $ic-400;
+    position: relative;
+    top: -1px;
+  }
+
+  &:hover,
+  &:focus {
+    color: $primary-color;
+  }
+
+  @include breakpoint(sm) {
+    margin: 0;
+  }
+}
+
+.btn--category {
+  padding: 0.3rem;
+  transform: translateY(-50%);
 }

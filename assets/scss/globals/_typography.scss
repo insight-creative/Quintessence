@@ -1,55 +1,3 @@
-/* poppins-regular - latin */
-@font-face {
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 400;
-  src: local(""),
-    url("../fonts/poppins-v15-latin-regular.woff2") format("woff2"),
-    /* Chrome 26+, Opera 23+, Firefox 39+ */
-      url("../fonts/poppins-v15-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  font-display: swap;
-}
-/* poppins-500 - latin */
-@font-face {
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 500;
-  src: local(""), url("../fonts/poppins-v15-latin-500.woff2") format("woff2"),
-    /* Chrome 26+, Opera 23+, Firefox 39+ */
-      url("../fonts/poppins-v15-latin-500.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  font-display: swap;
-}
-/* poppins-600 - latin */
-@font-face {
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 600;
-  src: local(""), url("../fonts/poppins-v15-latin-600.woff2") format("woff2"),
-    /* Chrome 26+, Opera 23+, Firefox 39+ */
-      url("../fonts/poppins-v15-latin-600.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  font-display: swap;
-}
-/* poppins-700 - latin */
-@font-face {
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 700;
-  src: local(""), url("../fonts/poppins-v15-latin-700.woff2") format("woff2"),
-    /* Chrome 26+, Opera 23+, Firefox 39+ */
-      url("../fonts/poppins-v15-latin-700.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  font-display: swap;
-}
-/* poppins-900 - latin */
-@font-face {
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 900;
-  src: local(""), url("../fonts/poppins-v15-latin-900.woff2") format("woff2"),
-    /* Chrome 26+, Opera 23+, Firefox 39+ */
-      url("../fonts/poppins-v15-latin-900.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  font-display: swap;
-}
-
 body,
 button,
 input,
@@ -57,8 +5,13 @@ select,
 optgroup,
 textarea {
   font-family: $primary-font;
-  font-size: $ic-200;
+  font-size: $ic-100;
+  font-weight: 400;
   line-height: 1.5;
+
+  @include breakpoint(sm) {
+    font-size: $ic-200;
+  }
 }
 
 h1,
@@ -67,8 +20,9 @@ h3,
 h4,
 h5,
 h6 {
+  font-family: $primary-font;
   font-weight: 700;
-  line-height: calc(2px + 2ex + 2px);
+  line-height: 1.2;
   margin-bottom: 0.65em;
 }
 
@@ -78,17 +32,18 @@ h6 {
 
 h1,
 .h1 {
-  font-size: clamp($ic-600, 4vw, $ic-1000);
+  font-size: clamp($ic-400, 4vw, $ic-700);
+  max-width: 30ch;
 }
 
 h2,
 .h2 {
-  font-size: clamp($ic-400, 4vw, $ic-600);
+  font-size: clamp($ic-300, 4vw, $ic-500);
 }
 
 h3,
 .h3 {
-  font-size: clamp($ic-300, 4vw, $ic-500);
+  font-size: clamp($ic-300, 4vw, $ic-400);
 }
 
 h4,
@@ -98,31 +53,16 @@ h4,
 
 h5,
 .h5 {
-  font-size: clamp($ic-100, 4vw, $ic-300);
+  font-size: clamp($ic-200, 4vw, $ic-300);
 }
 
 h6,
 .h6 {
-  font-size: $ic-100;
+  font-size: clamp($ic-100, 4vw, $ic-200);
 }
 
-article {
-  > ul,
-  > ol {
-    > li + li {
-      margin-top: $ic-100;
-    }
-  }
-
-  * {
-    + h2 {
-      margin-top: 4rem;
-    }
-
-    + h3 {
-      margin-top: 2rem;
-    }
-  }
+p {
+  margin: 0;
 }
 
 .i {
@@ -145,10 +85,95 @@ article {
   margin: 0;
 }
 
+.text-black {
+  color: $black;
+  transition: $transition;
+}
+
 .text-white {
   color: $white;
 }
 
 .text-primary {
   color: $primary-color;
+}
+
+.text-secondary {
+  color: $secondary-color;
+}
+
+.fw-400 {
+  font-weight: 400;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+.fw-600 {
+  font-weight: 600;
+}
+
+.fw-700 {
+  font-weight: 700;
+}
+
+.fs-100 {
+  font-size: $ic-100;
+}
+
+.fs-200 {
+  font-size: $ic-200;
+}
+
+.fs-300 {
+  font-size: $ic-300;
+}
+
+.fs-400 {
+  font-size: $ic-400;
+}
+
+.fs-500 {
+  font-size: $ic-500;
+}
+
+.fs-600 {
+  font-size: $ic-600;
+}
+
+.fs-700 {
+  font-size: $ic-700;
+}
+
+.fs-800 {
+  font-size: $ic-800;
+}
+
+.fs-900 {
+  font-size: $ic-900;
+}
+
+.fs-1000 {
+  font-size: $ic-1000;
+}
+
+.text-center {
+  text-align: center;
+}
+
+@include breakpoint(sm) {
+  .text-center-s {
+    text-align: center;
+  }
+}
+
+@include breakpoint(md) {
+  .text-center-m {
+    text-align: center;
+  }
+}
+
+address {
+  font-style: normal;
 }

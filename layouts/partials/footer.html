@@ -1,13 +1,13 @@
 <footer class="footer" data-scroll-section>
-  <div class="footer__copyright flex flex-column flex-row-m flex-justify-between flex-center wrapper-wide">
+  <div class="footer__copyright flex flex-column flex-row-m flex-justify-between flex-center wrapper-lg">
     <p>© {{ dateFormat "2006" now }} {{ .Site.Params.author }} All Rights Reserved.</p>
-    <div class="footer__nav">
+    <nav class="footer__nav" aria-label="Footer Navigation">
       <ul class="footer__nav-list flex">
         <li class="footer__nav-list-item flex flex-center"><a href="/privacy-policy/" class="footer__nav-item">Privacy Policy</a> | </li>
         <li class="footer__nav-list-item flex flex-center"><a href="/sitemap/" class="footer__nav-item">Sitemap</a> | </li>
         <li class="footer__nav-list-item flex flex-center"><a href="/contact/" class="footer__nav-item">Contact Us</a></li>
       </ul>
-    </div>
+    </nav>
   </div>
 </footer>
 {{ partial "scripts" . }}
