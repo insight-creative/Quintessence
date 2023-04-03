@@ -1,80 +1,23 @@
 .card {
-  background-color: $white;
-  padding: $ic-300;
+  list-style-type: none;
+  border-bottom: 1px solid $primary-color;
+  max-width: none;
+
+  article {
+    max-width: none;
+  }
+}
+
+.card__read-more {
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
   transition: 0.3s ease-out;
-  background-size: 50%;
-  background-repeat: no-repeat;
-  background-position: bottom right;
-  height: 100%;
 
-  &__link {
-    text-decoration: none;
-  }
-
-  &__link,
-  &__content {
-    height: 100%;
-  }
-
-  &__author-image {
-    max-width: $ic-800;
-    max-height: $ic-800;
-    margin-right: $ic-200;
-    border: 2px solid $secondary-color;
-    border-radius: 50%;
-    background-color: $white;
-  }
-
-  &__name {
-    margin-left: $ic--200;
-  }
-
-  &__title {
-    color: $black;
-  }
-
-  &__read-more {
-    font-size: $ic-100;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-family: $secondary-font;
-
-    svg {
-      width: $ic-200;
-      height: $ic-200;
-      fill: $primary-color;
-      transition: 0.3s ease-out;
-      position: relative;
-      top: -1px;
-    }
-  }
-
-  &__reading-time {
-    padding: 15px 25px;
-    color: $primary-color;
-    svg {
-      fill: $primary-color;
-      height: $ic-200;
-      width: $ic-200;
-      margin-right: 10px;
-      transition: 0.3s ease-out;
-    }
-  }
-
-  &__arrow {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    height: $ic-500;
-    width: $ic-500;
-    display: grid;
-    place-items: center;
-
-    svg {
-      fill: $white;
-      height: $ic-400;
-      width: $ic-400;
-    }
+  svg {
+    width: 20px;
+    margin-left: 5px;
+    transition: 0.3s ease-out;
   }
 }
 

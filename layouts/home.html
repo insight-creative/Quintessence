@@ -1,36 +1,36 @@
 {{ define "main" }}
 <section class="block blog-container">
-  <div class="wrapper-lg">
+  <ul class="blog-post-list wrapper-lg">
     {{ range .Paginator.Pages.ByDate.Reverse }}
-    <article class="blog-summary">
-      <a href="{{ .Permalink }}" class="blog-summary__link">
-        <div class="flex flex-column flex-row-m">
-          <div class="w-100 w-30-m">
-            <div class="blog-summary__image-wrap">
+    <li class="card">
+      <article class="grid-wrapper gap-xxl">
+        <div class="grid-12 grid-4-sm">
+          <div class="card__image-wrap">
+            <a href="{{ .Permalink }}" class="card__link">
               {{ if .Params.seo.featured_image }}
-                <img src="{{ .Params.seo.featured_image }}" alt="" class="blog-summary__img img-responsive zoom-images">
+                <img src="{{ .Params.seo.featured_image }}" alt="" class="card__img img-responsive zoom-images">
               {{ else }}
-                <img src="https://source.unsplash.com/random/800x600" alt="" class="blog-summary__img img-responsive zoom-images">
+                <img src="https://source.unsplash.com/random/800x600" alt="" class="card__img img-responsive zoom-images">
               {{  end }}
-            </div>
-          </div>
-          <div class="w-100 w-70-m">
-            <div class="blog-summary__content">
-              <h3 class="blog-summary__title g4">{{ .Title }}</h3>
-              {{ partial "blog/entry-meta" . }}
-              <p class="blog-summary__summary">
-                {{ if .Params.summary }}{{ .Params.summary | safeHTML }}{{ else }}{{ .Summary  | safeHTML }}{{ end }}
-              </p>
-              <span class="blog-summary__read-more">
-                Read More {{ partial "svg-icons/arrow-right.svg" . }}
-              </span>
-            </div>
+            </a>
           </div>
         </div>
-      </a>
-    </article>
+        <div class="grid-12 grid-8-sm">
+          <div class="card__content">
+            <h3 class="card__title g4"><a href="{{ .Permalink }}" class="card__link">{{ .Title }}</a></h3>
+            {{ partial "blog/entry-meta" . }}
+            <p class="card__summary">
+              {{ if .Params.summary }}{{ .Params.summary | safeHTML }}{{ else }}{{ .Summary  | safeHTML }}{{ end }}
+            </p>
+            <span class="card__read-more">
+              Read More {{ partial "svg-icons/arrow-right.svg" . }}
+            </span>
+          </div>
+        </div>
+      </article>
+    </li>
     {{ end }}
     {{ partial "blog/custom-pagination.html" . }}
-  </div>
+  </ul>
 </section>
 {{ end }}
