@@ -3,28 +3,24 @@
   <ul class="blog-post-list wrapper-lg">
     {{ range .Paginator.Pages.ByDate.Reverse }}
     <li class="card">
-      <article class="grid-wrapper gap-md">
-        <div class="grid-12 grid-4-sm">
+      <article class="columns-two-thirds-right gap-sm">
+        <div class="col">
           <div class="card__image-wrap">
             <a href="{{ .Permalink }}" class="card__link">
               {{ if .Params.seo.featured_image }}
-                <img src="{{ .Params.seo.featured_image }}" alt="" class="card__img img-responsive zoom-images">
+                <img src="{{ .Params.seo.featured_image }}" alt="" class="card__img dim">
               {{ else }}
-                <img src="https://source.unsplash.com/random/800x600" alt="" class="card__img img-responsive zoom-images">
+                <img src="https://source.unsplash.com/random/800x600" alt="" class="card__img dim">
               {{  end }}
             </a>
           </div>
         </div>
-        <div class="grid-12 grid-8-sm">
+        <div class="col">
           <div class="card__content">
             <h3 class="card__title g4"><a href="{{ .Permalink }}" class="card__link">{{ .Title }}</a></h3>
-            {{ partial "blog/entry-meta" . }}
             <p class="card__summary">
               {{ if .Params.summary }}{{ .Params.summary | safeHTML }}{{ else }}{{ .Summary  | safeHTML }}{{ end }}
             </p>
-            <span class="card__read-more">
-              Read More {{ partial "svg-icons/arrow-right.svg" . }}
-            </span>
           </div>
         </div>
       </article>

@@ -9,17 +9,14 @@
   }
 }
 
-.card__read-more {
-  margin: 1rem 0;
-  display: flex;
-  align-items: center;
-  transition: 0.3s ease-out;
+.card__image-wrap {
+  height: 100%;
+}
 
-  svg {
-    width: 20px;
-    margin-left: 5px;
-    transition: 0.3s ease-out;
-  }
+.card__img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 .card--blog {
