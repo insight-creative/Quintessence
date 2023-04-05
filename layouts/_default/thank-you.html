@@ -1,0 +1,13 @@
+{{ define "main" }}
+{{ partial "hero" . }}
+{{ partial "breadcrumbs" . }}
+<section class="block">
+    <div class="wrapper-sm text-center flow">
+        <h2>Thank you for your message!</h2>
+        <p>A {{ .Site.Data.site_settings.business_name }} team member will contact you as soon as possible. In the meantime, connect with us on social media to learn more about us.</p>
+        <div class="text-center">
+            {{ partialCached "social-media" . }}
+        </div>
+    </div>
+</section>
+{{ end }}

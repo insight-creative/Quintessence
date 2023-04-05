@@ -1,6 +1,5 @@
 .category-wrapper {
   position: relative;
-  border-bottom: 1px solid $gray;
 }
 
 .category-list {
@@ -12,9 +11,11 @@
   transform-origin: top;
   transition: $transition;
   padding: $ic-300;
+  width: 100%;
 
   @include breakpoint(md) {
     columns: 2;
+    width: 500px;
   }
 }
 

@@ -1,9 +1,14 @@
 {{ define "main" }}
 <section class="block">
-  {{ partial "layout-toggle" . }}
+  <div class="wrapper-lg flex flex-justify-between">
+    {{ partial "blog/category-filter" . }}
+    {{ partial "blog/layout-toggle" . }}
+  </div>
   <ul class="blog--list wrapper-lg gap-md">
-    {{ range .Paginator.Pages.ByDate.Reverse }}
-      {{ .Render "blog-card" }}
+    {{ $pages := .Site.RegularPages }}
+    {{ $paginator := .Paginate ( where .Data.Pages "Type" "blog" ) }}
+    {{ range $paginator.Pages }}
+        {{ .Render "blog-card" }}
     {{ end }}
   </ul>
   {{ partial "blog/custom-pagination.html" . }}

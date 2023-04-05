@@ -1,10 +1,14 @@
 ---
-author: Hugo Authors
-title: Math Typesetting
+title: "Math Typesetting"
+seo:
+  page_title:
+  meta_description: A brief guide to setup KaTeX
+  featured_image: 
+draft: false
+author:
 date: 2019-03-08
-archives: ["2019/03"]
-description: A brief guide to setup KaTeX
-math: true
+categories:
+  - Uncategorized
 ---
 
 Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.
