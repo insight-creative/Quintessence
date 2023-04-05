@@ -1,13 +1,15 @@
-<footer class="footer" data-scroll-section>
-  <div class="footer__copyright flex flex-column flex-row-m flex-justify-between flex-center wrapper-lg">
-    <p>© {{ dateFormat "2006" now }} {{ .Site.Params.author }} All Rights Reserved.</p>
-    <nav class="footer__nav" aria-label="Footer Navigation">
-      <ul class="footer__nav-list flex">
-        <li class="footer__nav-list-item flex flex-center"><a href="/privacy-policy/" class="footer__nav-item">Privacy Policy</a> | </li>
-        <li class="footer__nav-list-item flex flex-center"><a href="/sitemap/" class="footer__nav-item">Sitemap</a> | </li>
-        <li class="footer__nav-list-item flex flex-center"><a href="/contact/" class="footer__nav-item">Contact Us</a></li>
+<footer class="footer">
+  <div class="footer__top"></div>
+  <div class="footer__bottom wrapper-lg">
+    <div class="copyright flex flex-column flex-row-m flex-center">
+      <p>© {{ dateFormat "2006" now }} {{ .Site.Data.site_settings.business_name }}</p>
+      <ul class="copyright__nav flex flex-justify-center flex-justify-start-m">
+        <li class="copyright__list-item"><a href="/privacy-policy/" class="copyright__nav-item">Privacy Policy</a></li>
+        <li class="copyright__list-item"><a href="/sitemap/" class="copyright__nav-item">Sitemap</a></li>
+        <li class="copyright__list-item"><a href="/contact/" class="copyright__nav-item">Contact</a></li>
       </ul>
-    </nav>
+      <div class="credits"><a href="https://insightcreative.com" target="_blank">Website by Insight Creative, Inc.</a></div>
+    </div>
   </div>
 </footer>
 {{ partial "scripts" . }}

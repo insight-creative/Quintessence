@@ -1,32 +1,11 @@
 {{ define "main" }}
-<section class="block blog-container">
-  <ul class="blog-post-list wrapper-lg">
+<section class="block">
+  {{ partial "layout-toggle" . }}
+  <ul class="blog--list wrapper-lg gap-md">
     {{ range .Paginator.Pages.ByDate.Reverse }}
-    <li class="card">
-      <article class="columns-two-thirds-right gap-sm">
-        <div class="col">
-          <div class="card__image-wrap">
-            <a href="{{ .Permalink }}" class="card__link">
-              {{ if .Params.seo.featured_image }}
-                <img src="{{ .Params.seo.featured_image }}" alt="" class="card__img dim">
-              {{ else }}
-                <img src="https://source.unsplash.com/random/800x600" alt="" class="card__img dim">
-              {{  end }}
-            </a>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card__content">
-            <h3 class="card__title g4"><a href="{{ .Permalink }}" class="card__link">{{ .Title }}</a></h3>
-            <p class="card__summary">
-              {{ if .Params.summary }}{{ .Params.summary | safeHTML }}{{ else }}{{ .Summary  | safeHTML }}{{ end }}
-            </p>
-          </div>
-        </div>
-      </article>
-    </li>
+      {{ .Render "blog-card" }}
     {{ end }}
-    {{ partial "blog/custom-pagination.html" . }}
   </ul>
+  {{ partial "blog/custom-pagination.html" . }}
 </section>
 {{ end }}

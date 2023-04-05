@@ -10,44 +10,6 @@
     align-items: center;
   }
 
-  &__next a,
-  &__prev a,
-  &__back a {
-    display: flex;
-    text-decoration: none;
-
-    &:hover,
-    &:focus {
-      color: $primary-color;
-
-      svg {
-        stroke: $primary-color;
-      }
-    }
-  }
-
-  &__next {
-    margin-left: $ic-200;
-
-    &:hover,
-    &:focus {
-      svg {
-        transform: translateX(5px);
-      }
-    }
-  }
-
-  &__prev {
-    margin-right: $ic-200;
-
-    &:hover,
-    &:focus {
-      svg {
-        transform: translateX(-5px);
-      }
-    }
-  }
-
   svg {
     height: $ic-200;
     width: $ic-200;
@@ -57,26 +19,40 @@
   }
 }
 
-.post-navigation--alt {
-  padding: 0;
+.post-navigation__next a,
+.post-navigation__prev a,
+.post-navigation__back a {
+  display: flex;
+  text-decoration: none;
 
-  .post-navigation__link {
-    padding: $ic-900;
-    height: 100%;
-    transition: 0.5s ease-out;
+  &:hover,
+  &:focus {
+    color: $primary-color;
 
-    &:hover,
-    &:focus {
-      background: $primary-color;
-      color: $white;
+    svg {
+      stroke: $primary-color;
     }
   }
+} 
 
-  .post-navigation__label {
-    margin-bottom: 1.5rem;
+.post-navigation__next {
+  margin-left: $ic-200;
+
+  &:hover,
+  &:focus {
+    svg {
+      transform: translateX(5px);
+    }
   }
+}
 
-  .post-navigation__button + .post-navigation__button {
-    border-left: 1px solid $black;
+.post-navigation__prev {
+  margin-right: $ic-200;
+
+  &:hover,
+  &:focus {
+    svg {
+      transform: translateX(-5px);
+    }
   }
 }

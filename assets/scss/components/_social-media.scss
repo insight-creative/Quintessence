@@ -6,30 +6,4 @@
     list-style-type: none;
     margin: 0;
   }
-
-  .facebook-icon {
-    top: -3px;
-  }
-
-  &__icon-inner {
-    position: relative;
-    margin: 0 5px;
-
-    svg {
-      width: $ic-300;
-      height: $ic-300;
-      fill: $white;
-    }
-
-    &:hover,
-    &:focus {
-      &::before {
-        opacity: 1;
-      }
-    }
-  }
-
-  &__list-item:first-of-type a {
-    padding-left: 0;
-  }
 }

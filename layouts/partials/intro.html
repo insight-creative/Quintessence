@@ -1,0 +1,13 @@
+<section aria-labelledby="{{ .heading | urlize }}" class="intro block">
+  <div class="wrapper flow">
+    {{ partial "heading" . }}
+    {{ if .body }}
+      <p>{{ .body | markdownify }}</p>
+    {{ end }} 
+    {{ if .button.enabled }}
+      {{ with .button }}
+        {{ partial "button-primary" . }}
+      {{ end }}
+    {{ end }}
+  </div>
+</section>

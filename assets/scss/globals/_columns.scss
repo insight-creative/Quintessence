@@ -1,16 +1,14 @@
 .columns {
     display: flex;
     flex-wrap: wrap;
-
+  
     .col {
-        flex-grow: 1;
-        flex-basis: 100%;
-
-        @include breakpoint(sm) {
-            flex-basis: 0;
-        }
+      flex-grow: 1;
+      flex-basis: calc(min(100%, 300px)); // Adjust the 300px value to your desired breakpoint if needed
     }
-}
+  }
+
+
 
 .columns-two-thirds-right {
     display: flex;

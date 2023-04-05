@@ -1,6 +1,6 @@
 console.log('%c Crafted by Insight Creative, Inc. Designed and Developed by Justin Parsons', 'background: #1d1d1d; color: white; padding: 5px 10px;')
 
-import { toggleMobileMenu, toggleMobileDropdowns, filterPosts } from "./partials";
+import { toggleMobileMenu, toggleMobileDropdowns, filterPosts, toggleLayout } from "./partials";
 
 const siteHeader = document.querySelector(".header")
 const hasSubMenu = document.querySelectorAll(".has-sub-menu")

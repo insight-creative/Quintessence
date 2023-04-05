@@ -2,17 +2,6 @@
 <a class="screen-reader-skip-to-content" href="#main-content" tabindex="0" aria-label="Skip to main content">Skip to main content</a>
 <a class="screen-reader-skip-to-content" href="#footer" tabindex="0" aria-label="Skip to footer content">Skip to footer content</a>
 <header class="header">
-  <div class="header__top bg-gray">
-    <div class="header__top-inner flex flex-justify-end w-100 wrapper-lg">
-      <ul class="header__secondary-menu flex flex-center">
-        {{ with .Site.Menus.secondary }}
-          {{ range . }}
-            <li><a href="{{ .URL }}">{{ .Name }}</a></li>
-          {{ end }}
-        {{ end }}
-      </ul>
-    </div>
-  </div>
   <div class="header__wrapper wrapper-lg">
     <div class="header__logo">
       <span class="visually-hidden">Home</span>

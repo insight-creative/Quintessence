@@ -1,9 +1,0 @@
-.service-breakdown {
-  &__item {
-    padding-left: $ic-100;
-  }
-
-  &__item::marker {
-    content: url(/images/checkmark.svg);
-  }
-}

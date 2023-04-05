@@ -1,7 +1,9 @@
 {{ define "main" }}
-{{ partial "blog/blog-hero" . }}
-    <div class="wrapper padding-top-4 padding-bottom-4">
-        {{ .Title }}
+{{ partial "hero" . }}
+{{ partial "breadcrumbs" . }}
+<div class="block">
+    <div class="wrapper-sm flow">
         {{ .Content  }}
     </div>
+</div>
 {{ end }}

@@ -1,0 +1,38 @@
+<form name="job_application" enctype="multipart/form-data" method="post" action="/thank-you-apply/">
+    <div class="visually-hidden">
+      <label for="_subject">New form submission from the lcojlaw.com application form</label>
+      <input aria-label="subject" name="_subject" value="New form submission from the lcojlaw.com application form" />
+    </div>
+    <h2 class="no-margin">Applicant Information</h2>
+    <div class="contact-form__wrapper">
+      <div class="contact-form__form-row">
+        <div class="contact-form__row-wrapper">
+          <div class="contact-form__form-group flex-m">
+            <label for="First_Name">First Name*</label>
+            <input aria-label="First_Name" name="First Name" type="text" class="contact-form__form-control" required>
+          </div>
+          <div class="contact-form__form-group flex-m">
+            <label for="Last_Name">Last Name*</label>
+            <input aria-label="Last_Name" name="Last Name" type="text" class="contact-form__form-control" required>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form__form-group flex-m">
+          <label for="email">Email*</label>
+          <input aria-label="email" name="email" type="email" class="contact-form__form-control" required>
+      </div>
+      <div class="contact-form__form-group flex-m">
+          <label for="Phone">Phone*</label>
+          <input aria-label="Phone" name="Phone" type="tel" class="contact-form__form-control" required>
+      </div>
+      <div class="mb-6 flex flex-column">
+          <label for="resume">Resume/Cover Letter*</label>
+          <input aria-label="resume" name="resume" type="file">
+      </div>
+      <input type="hidden" name="inbox_key" value="lcoj-form-inbox">
+      <input type="text" name="_gotcha" style="display: none;">
+      <div class="h-captcha" data-sitekey="aaa2bfed-3e83-444e-bb4f-cf3d4924f728"></div>
+      <br>
+      <button type="submit" class="contact-form__btn btn btn-primary">Send Application</button>
+    </div>
+  </form>

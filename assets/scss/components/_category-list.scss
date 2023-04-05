@@ -10,23 +10,23 @@
   z-index: 1;
   transform: scaleY(0);
   transform-origin: top;
-  transition: 0.3s ease;
+  transition: $transition;
   padding: $ic-300;
 
   @include breakpoint(md) {
     columns: 2;
   }
+}
 
-  &__item {
-    list-style-type: none;
-    padding: 0;
-  }
+.category-list__item {
+  list-style-type: none;
+  padding: 0;
+}
 
-  &__link {
-    color: $white;
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-  }
+.category-list__link {
+  color: $white;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
 }
 
 .category-list.list-open {

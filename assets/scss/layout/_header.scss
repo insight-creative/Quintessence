@@ -1,8 +1,10 @@
 .header {
   width: 100%;
   position: fixed;
+  top: 0;
+  left: 0;
   z-index: 9;
-  transition: .3s ease-out;
+  transition: $transition;
   background-color: $white;
   box-shadow: 0 4px 6px -6px;
 }

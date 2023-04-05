@@ -1,0 +1,19 @@
+<div class="contact-sidebar">
+  <iframe title="Google maps location of Insight Creative, Inc. in Green Bay WI" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11385.733072687639!2d-87.9928414!3d44.4857883!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8802e4dd4df188dd%3A0xcaf53222c81d4a5c!2sInsight%20Creative%2C%20Inc.!5e0!3m2!1sen!2sus!4v1680661926581!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <div class="contact-info flow">
+    <div class="contact-info__contact">
+      <h3 class="h5">{{ .Site.Data.site_settings.business_name }}</h3>
+      <p>
+        {{ .Site.Data.site_settings.address.street }}
+        <br>
+        {{ .Site.Data.site_settings.address.city }}, {{ .Site.Data.site_settings.address.state }} {{ .Site.Data.site_settings.address.zip }}
+      </p>
+      <a href="https://goo.gl/maps/Gbke7Mx9e9oQmqag9" class="decorated-link" rel="noopener noreferrer" target="_blank">View on Google Maps</a>
+    </div>
+    <div>
+      <small>Phone</small><br><a href="tel:{{ .Site.Data.site_settings.phone }}" class="decorated-link">{{ .Site.Data.site_settings.phone }}</a>
+    </div>
+    <div><small>Fax</small><br>{{ .Site.Data.site_settings.fax }}</div>
+    <div>{{ partialCached "social-media" . }}</div>
+  </div>
+</div>

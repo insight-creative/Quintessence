@@ -12,14 +12,7 @@
 {{ $mainDev := resources.Get "js/main.js" | resources.Fingerprint "sha512" }}
 <script src="{{ $mainDev.RelPermalink }}" integrity="{{ $mainDev.Data.Integrity }}"></script>
 {{ end }}
-<script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on('init', (user) => {
-        if (!user) {
-          window.netlifyIdentity.on('login', () => {
-            document.location.href = '/admin/';
-          });
-        }
-      });
-    }
-</script>
+
+{{ if hugo.IsProduction }}
+
+{{ end }}

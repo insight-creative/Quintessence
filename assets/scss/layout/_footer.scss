@@ -1,7 +1,6 @@
 .footer {
   background-color: $black;
   color: $white;
-  padding: $ic-700 0;
   font-size: $ic-200;
 
   a {
@@ -19,22 +18,58 @@
     margin-bottom: 0;
   }
 
-  &__nav {
-    ul {
+  .copyright {
+    font-size: 14px;
+    padding: $ic-100 0;
+
+    @include breakpoint(sm) {
+      flex-direction: row;
+    }
+
+    a {
+      text-decoration: none;
+  
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+    }
+
+    p {
       margin: 0;
     }
-  }
 
-  &__nav-list {
-    padding: 0;
-  }
+    &__nav {
+      margin: 0;
+      padding: 0;
 
-  &__nav-list-item {
-    list-style-type: none;
-    margin-top: 0;
-  }
+      @include breakpoint(sm) {
+        flex-direction: row;
+      }
+    }
 
-  &__nav-item {
-    padding: $ic-100 $ic-200;
+    &__list-item {
+      list-style-type: none;
+      margin: $ic-100;
+
+      @include breakpoint(md)  {
+        margin: 0;
+        margin-left: $ic--100;
+      }
+    }
+
+    p, .credits {
+      text-align: center;
+
+      @include breakpoint(md)  {
+        text-align: left;
+      }
+    }
+
+    @include breakpoint(md)  {
+      .credits {
+        margin-left: auto;
+      }
+    }
   }
 }

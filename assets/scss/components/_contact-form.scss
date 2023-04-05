@@ -1,75 +1,59 @@
 .contact-form {
-    background-color: $white;
-
-    &__wrapper {
-      padding: $ic-200;
-  
-      @include breakpoint(lg) {
-        padding: $ic-300 $ic-600;
-      }
-  
-      @include breakpoint(xl) {
-        padding: $ic-600;
-      }
-    }
-  
-    &__row-wrapper {
-      display: flex;
-      flex-direction: column;
-  
-      @include breakpoint(md) {
-        flex-direction: row;
-  
-        .contact-form__form-group {
-          flex: 50%;
-        }
-  
-        .contact-form__form-group:nth-of-type(2) {
-          padding-left: 1rem;
-        }
-      }
-    }
-  
-    &__form-group label {
-      flex: 0 0 25%;
-      color: $black;
-    }
-  
-    .contact-form__form-group input,
-    .contact-form__form-group textarea,
-    .contact-form__form-group select {
-      background-color: $light-gray;
-      color: $black;
-      border: 1px solid $light-gray;
-      width: 100%;
-      padding: $ic-100 $ic-200;
-      margin-bottom: $ic-100;
-      height: $ic-700;
-  
-      &:focus {
-        outline: 1px solid $primary-color;
-      }
-    }
-  
-    .contact-form__form-group textarea {
-      height: $ic-1000;
-    }
-
-    &__btn {
-      outline: 2px solid $secondary-color;
-      outline-offset: 3px;
-      cursor: pointer;
-      border-radius: 0px;
-      appearance: none;
-
-      &:hover, 
-      &:focus {
-        outline: 4px solid $secondary-color;
-        outline-offset: 6px;
-      }
-    }
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
-  
+
+.contact-form__wrapper {
+  padding: clamp($ic-200, 4vh, $ic-600);
+}
+
+.contact-form__row-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoint(md) {
+    flex-direction: row;
+
+    .contact-form__form-group {
+      flex: 50%;
+    }
+
+    .contact-form__form-group:nth-of-type(2) {
+      padding-left: 1rem;
+    }
+  }
+}
+
+.contact-form__form-group label {
+  flex: 0 0 25%;
+  font-size: $ic-200;
+  font-weight: 700;
+  color: $black;
+}
+
+.contact-form__btn {
+  border: none;
+}
+
+.contact-form__form-group input,
+.contact-form__form-group textarea,
+.contact-form__form-group select {
+  background-color: $white;
+  color: $black;
+  border: 1px solid rgba($black, .3);
+  width: 100%;
+  padding: $ic-100 $ic-200;
+  margin-bottom: $ic-100;
+  height: $ic-700;
+
+  &:focus {
+    outline: 2px solid $primary-color;
+  }
+}
+
+.contact-form__form-group textarea {
+  height: $ic-1000;
+}
+
 form.hidden {
-    display: none;
+  display: none;
 }

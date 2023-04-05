@@ -10,19 +10,8 @@ summaryLength = 30
 #################### default parameters ################################
 
 [params]
-  logo = ""
-  # Meta data
-  description = "Site Description here"
-  author = "Quintessence"
-  # Contact Information
-  phone = " "
-  email = "demo@email.com"
-  address = " "
-  googleMapLocation = ""
-  disallowSearchEngines = true
-  # Google Analitycs
-  googleAnalytics = " " # Your ID# search 
   minifyBundles = true
+  imgixDomain = "https://stadium-bike.imgix.net"
 
 # add redirects/headers
   [outputs]

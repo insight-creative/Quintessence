@@ -1,38 +1,22 @@
 {{ $heroClass := lower .Page.Title }}
-<div class="hero {{ anchorize $heroClass }}-hero">
-  {{ $heroimage := (.Resources.GetMatch (index .image)) }}
-
-  {{ $webp_src_set := ""}}
-  {{ $jpg_src_set := ""}}
-
-  {{ $jpg_xxl := $heroimage.Resize "1800x q90" }}
-  {{ $jpg_xl := $jpg_xxl.Resize "1400x q90" }}
-  {{ $jpg_l := $jpg_xl.Resize "1000x q90" }}
-  {{ $jpg_m := $jpg_l.Resize "800x q90" }}
-  {{ $jpg_s := $jpg_l.Resize "600x q90" }}
-
-  {{ $jpg_src_set = (print $jpg_s.RelPermalink " 600w" ", " $jpg_m.RelPermalink " 800w" ", "  $jpg_l.RelPermalink " 1000w" ", "  $jpg_xl.RelPermalink " 1400w" ", "  $jpg_xxl.RelPermalink " 1800w") }}
-
-  {{ $webp_xxl := $heroimage.Resize "1800x q90 webp" }}
-  {{ $webp_xl := $webp_xxl.Resize "1400x q90 webp" }}
-  {{ $webp_l := $webp_xl.Resize "1000x q90 webp" }}
-  {{ $webp_m := $webp_l.Resize "800x q90 webp" }}
-  {{ $webp_s := $webp_l.Resize "600x q90 webp" }}
-
-  {{ $webp_src_set = (print $webp_s.RelPermalink " 600w" ", " $webp_m.RelPermalink " 800w" ", "  $webp_l.RelPermalink " 1000w" ", "  $webp_xl.RelPermalink " 1400w" ", "  $webp_xxl.RelPermalink " 1800w") }}
-
-  <picture>
-      <source sizes="100vw" srcset="{{ $webp_src_set }}" type="image/webp" >
-      <source sizes="100vw" srcset="{{ $jpg_src_set }}" type="image/jpg" >
-      <img sizes="100vw" loading="lazy"
-          src="{{ $heroimage.RelPermalink }}" width="{{ $heroimage.Width }}" height="{{ $heroimage.Height }}" alt="" class="hero__image">
-  </picture>
-  <div class="hero__inner short-hero__inner w-100">
-    <div class="hero__content text-center text-white">
-      <h1 class="hero__title short-hero__title text-white no-margin">
-        {{ .heading | markdownify }}
-      </h1>
-      <p>{{ .body | markdownify }}</p>
+<section aria-labelledby="hero-heading" class="hero {{ anchorize $heroClass }}-hero columns gap-md">
+  <div class="col p-relative">
+    {{ partial "hero-image" . }}
+  </div>
+  <div class="col">
+    <div class="hero__content-inner w-100 flow">
+      <h1 id="hero-heading">{{ .Params.hero.heading | safeHTML }}</h1>
+      <div class="fw-500 flow">{{ .Params.hero.body | markdownify }}</div>
+      {{ if .Params.hero.button.enabled }}
+        {{ with .Params.hero.button }}
+          {{ partial "button-primary" . }}
+        {{ end }}
+      {{ end }}
+      {{ if .Params.hero.button_2.enabled }}
+        {{ with .Params.hero.button_2 }}
+          {{ partial "button-primary" . }}
+        {{ end }}
+      {{ end }}
     </div>
   </div>
-</div>
+</section>

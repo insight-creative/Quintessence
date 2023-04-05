@@ -24,21 +24,19 @@
 
 .btn--primary {
   color: $white;
-  background-color: $secondary-color;
-  border: 1px solid $secondary-color;
+  background-color: $primary-color;
   transition: $transition;
 
   &:hover,
   &:focus {
     color: $white;
-    background-color: $primary-color;
+    background-color: $secondary-color;
   }
 }
 
 .btn--secondary {
   color: $white;
   background-color: $secondary-color;
-  border: 1px solid $secondary-color;
   transition: $transition;
 
   &:hover,
@@ -81,5 +79,22 @@ button {
 
 .btn--category {
   padding: 0.3rem;
-  transform: translateY(-50%);
+}
+
+.btn--layout-toggle {
+  background: none;
+  border: none;
+  width: $ic-600;
+  height: $ic-600;
+  padding: .8rem;
+  transition: .3s ease-in-out;
+
+  svg {
+    fill: $black;
+  }
+}
+
+.btn--active {
+  opacity: .8;
+  transform: scale(.8);
 }
