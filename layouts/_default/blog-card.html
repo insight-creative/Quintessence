@@ -1,4 +1,11 @@
-<li class="card">
+<li class="card p-relative">
+    {{ if .Params.Categories }}
+	<div class="card__meta">
+		{{ range (.GetTerms "categories") }}
+			<a href="{{ .Permalink }}" class="btn btn--primary btn--category" aria-label="View all {{ .LinkTitle }} posts">{{ .LinkTitle }}</a>
+		{{ end }}
+	</div>
+	{{ end }}
     <article class="columns-two-thirds-right gap-sm">
         <div class="col">
             <div class="card__image-wrap">
@@ -6,7 +13,7 @@
                 {{ if .Params.seo.featured_image }}
                     <img src="{{ .Params.seo.featured_image }}" alt="" class="card__img dim">
                 {{ else }}
-                    <img src="https://source.unsplash.com/random/800x600" alt="" class="card__img dim">
+                    <img src="https://source.unsplash.com/random/800x600?space" alt="" class="card__img dim">
                 {{  end }}
                 </a>
             </div>

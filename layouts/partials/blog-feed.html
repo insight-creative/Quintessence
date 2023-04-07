@@ -5,8 +5,8 @@
       {{- range first 3 $blog -}}
       <article class="fade-up blog-summary">
           <a href="{{ .Permalink }}" class="blog-summary__link">
-              <div class="flex flex-column flex-row-m">
-                  <div class="w-100 w-30-m">
+              <div class="flex flex-column flex-row-md">
+                  <div class="w-100 w-30-md">
                       <div class="blog-summary__image-wrap">
                           {{ $has_image := .Params.image }}
                           {{ if $has_image }}
@@ -15,7 +15,7 @@
                           {{ end }}
                       </div>
                   </div>
-                  <div class="w-100 w-70-m">
+                  <div class="w-100 w-70-md">
                       <div class="blog-summary__content">
                           <h3 class="blog-summary__title g4">{{ .Title }}</h3>
                           {{ partial "blog/entry-meta" . }}

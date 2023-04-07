@@ -10,41 +10,14 @@
   }
 }
 
-.card__read-more {
-  margin: 1rem 0;
-  display: flex;
-  align-items: center;
-  transition: 0.3s ease-out;
-
-  svg {
-    width: 20px;
-    margin-left: 5px;
-    transition: 0.3s ease-out;
-  }
+.card__meta {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
-.card--blog {
-  padding: 0;
-
-  .card__meta {
-    a {
-      margin-left: $ic--200 ;
-    }
-  }
-
-  .card__body {
-    padding: $ic-300;
-  }
-
-  .card__categories {
-    color: $white;
-    text-decoration: none;
-  }
-
-  &:hover,
-  &:focus {
-    transform: translateY(-4px);
-    transition: 0.3s ease-out;
-    box-shadow: 5px 5px 18px -2px rgba(0, 0, 0, 0.4);
-  }
+.card__img {
+  block-size: 250px;
+  inline-size: 100%;
+  object-fit: cover;
 }

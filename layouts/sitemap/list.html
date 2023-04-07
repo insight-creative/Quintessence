@@ -2,8 +2,8 @@
 {{ partial "blog/blog-hero" . }}
 <div class="fade-wrapper" data-scroll-section>
     <div class="sitemap-content container padding-top-4 padding-bottom-4">
-        <div class="flex flex-column flex-row-m">
-            <div class="w-100 w-30-m">
+        <div class="flex flex-column flex-row-md">
+            <div class="w-100 w-30-md">
                 <h3>Pages</h3>
                 <ul class="sitemap-nav-list">
                     {{ $url := .RelPermalink }}
@@ -16,7 +16,7 @@
                     {{ end }}
                 </ul>
             </div>
-            <div class="w-100 w-70-m">
+            <div class="w-100 w-70-md">
                 <h3>Blog Posts</h3>
                 <ul class="sitemap-nav-list">
                     {{ $pages := .Site.RegularPages }}
